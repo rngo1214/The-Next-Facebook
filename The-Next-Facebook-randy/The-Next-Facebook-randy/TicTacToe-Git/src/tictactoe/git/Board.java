@@ -46,8 +46,15 @@ public class Board extends Game{
         }
     }
     public void markBoard(int row, int col, String symbol){
-        this.board[row-1][col-1] = symbol;
+        if(this.board[row][col].equals(" ")) {
+            this.board[row][col] = symbol;
+        }
+        else {
+            System.out.println("Location occupied. Try again");
+        }
     }
+    
+
     
     public String[][] getBoard(){
         return this.board;
