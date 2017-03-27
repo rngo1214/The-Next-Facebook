@@ -44,16 +44,18 @@ public class Game {
     public void endGame(String name){
         System.out.println("Game over! The winner is: " + name);
         System.out.println("Play again? (Y/N)");
-        if (scan.nextLine().equals("Y")) {
-            newGame();
+        String input = "";
+        while (input.equals("")) {
+            input = scan.nextLine();
+            if (input.equals("Y")) {
+                newGame();
+            }
         }
-        else {
-            System.out.println("Thanks for playing");
-        }
+                
     }
 
     public boolean validInput(int p){
-        if (p <= 3 && p > 0) {
+        if (p <= 3 && p >= 0) {
             return true;
         }
         else {
