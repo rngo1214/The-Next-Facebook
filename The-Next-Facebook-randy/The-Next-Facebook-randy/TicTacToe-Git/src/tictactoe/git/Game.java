@@ -41,7 +41,8 @@ public class Game {
         Player player2 = new Player(name2, "O");
     }
     
-    public void endGame(String name){
+    public void
+        endGame(String name){
         System.out.println("Game over! The winner is: " + name);
         System.out.println("Play again? (Y/N)");
         String input = "";
@@ -49,10 +50,14 @@ public class Game {
             input = scan.nextLine();
             if (input.equals("Y")) {
                 newGame();
+                
+            }
+            else if (input.equals("N")){
+                System.out.println("Thanks for playing!");
+                
             }
         }
-                
-    }
+    }           
 
     public boolean validInput(int p){
         if (p <= 3 && p >= 0) {
